@@ -300,6 +300,9 @@ const STATIC = {
   "/": ["index.html", "text/html; charset=utf-8"],
   "/app.js": ["app.js", "application/javascript; charset=utf-8"],
   "/admin.js": ["admin.js", "application/javascript; charset=utf-8"],
+  "/admin": ["admin.html", "text/html; charset=utf-8"],
+  "/admin.html": ["admin.html", "text/html; charset=utf-8"],
+  "/admin-boot.js": ["admin-boot.js", "application/javascript; charset=utf-8"],
   "/style.css": ["style.css", "text/css; charset=utf-8"],
 };
 const staticCache = {};
@@ -309,7 +312,7 @@ for (const [route, [file, type]] of Object.entries(STATIC)) {
       const p = path.join(__dirname, file);
       if (!staticCache[file] || !IS_PROD) staticCache[file] = fs.readFileSync(p);
       res.setHeader("Content-Type", type);
-      res.setHeader("Cache-Control", route === "/" ? "no-cache" : "public, max-age=300");
+      res.setHeader("Cache-Control", type.startsWith("text/html") ? "no-cache" : "public, max-age=300");
       res.send(staticCache[file]);
     } catch (e) { next(e); }
   });

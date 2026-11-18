@@ -3,7 +3,7 @@
 ইউজার প্যানেল + অ্যাডমিন প্যানেল + API gateway (প্যাকেজ, মেয়াদ, রিকোয়েস্ট লিমিট)।
 
 ## ফাইল (সব একই ফোল্ডারে, কোনো সাবফোল্ডার নেই)
-`server.js`, `index.html`, `style.css`, `app.js`, `admin.js`, `package.json`
+`server.js`, `index.html`, `admin.html`, `style.css`, `app.js`, `admin.js`, `admin-boot.js`, `package.json`
 
 ## ১. ডেটাবেজ
 আলাদা ডেটাবেজ লাগবে না। `DATABASE_URL` না দিলে সাইটের ভেতরেই ডেটাবেজ চলে (`data` ফোল্ডারে)।
@@ -23,7 +23,7 @@ New → Web Service → GitHub repo যুক্ত করুন → Environment
 | `NODE_ENV` | `production` |
 | `BEHIND_CLOUDFLARE` | Cloudflare চালু করলে `true`, না হলে `false` |
 
-প্রথমবার চালু হলে অ্যাডমিন অ্যাকাউন্ট নিজে তৈরি হবে। সাইটে গিয়ে ওই ইমেইল/পাসওয়ার্ডে Sign In করলে **Admin Panel** খুলবে।
+প্রথমবার চালু হলে অ্যাডমিন অ্যাকাউন্ট নিজে তৈরি হবে। ব্রাউজারে `আপনার-সাইট.onrender.com/admin` খুলে ওই ইমেইল/পাসওয়ার্ডে Sign In করলে **Admin Panel** খুলবে।
 
 ## ৩. অ্যাডমিন প্যানেলে প্রথম সেটআপ
 1. **Servers** → Add server: আপনার নেম-চেক সার্ভারের লিংক (যেমন `https://xxx.onrender.com`) আর ওই সার্ভারের `API_KEYS` এর মান।
