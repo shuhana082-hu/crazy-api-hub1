@@ -1,0 +1,14 @@
+{
+  "name": "name-check-api-site",
+  "version": "1.0.0",
+  "description": "Name check API selling website with user and admin panels",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.4",
+    "pg": "^8.23.1",
+    "@electric-sql/pglite": "^0.3.0"
+  }
+}
